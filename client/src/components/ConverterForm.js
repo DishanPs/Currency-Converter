@@ -75,7 +75,7 @@ const ConverterForm = ({ onTransferCreated }) => {
       <br />
       <br />
       <br />
-      <Button variant="contained" color="primary" onClick={handleConvert}>
+      <Button variant="contained" color="success" onClick={handleConvert}>
         Convert
       </Button>
     </div>

@@ -1,14 +1,16 @@
-import React from 'react';
-import { Button, List, ListItem, ListItemText } from '@mui/material';
-import axios from 'axios';
+import React from "react";
+import { Button, List, ListItem, ListItemText } from "@mui/material";
+import axios from "axios";
 
 const TransferHistory = ({ transfers, onTransferDeleted }) => {
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/transfers/${id}`);
+      await axios.delete(
+        `${process.env.REACT_APP_BACKEND_URL}/api/transfers/${id}`
+      );
       onTransferDeleted(id);
     } catch (error) {
-      console.error('Error deleting transfer record:', error);
+      console.error("Error deleting transfer record:", error);
     }
   };
 
@@ -20,7 +22,11 @@ const TransferHistory = ({ transfers, onTransferDeleted }) => {
             primary={`${transfer.transferAmount} ${transfer.fromCountry} = ${transfer.convertedAmount} ${transfer.toCountry}`}
             secondary={new Date(transfer.date).toLocaleString()}
           />
-          <Button variant="contained" color="secondary" onClick={() => handleDelete(transfer._id)}>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => handleDelete(transfer._id)}
+          >
             Revoke
           </Button>
         </ListItem>

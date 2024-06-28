@@ -33,10 +33,14 @@ const App = () => {
   return (
     <Container>
       <Typography variant="h2" gutterBottom>
-        <center> Currency Converter </center>
+        <center>
+          {" "}
+          <b>Currency Converter</b>{" "}
+        </center>
       </Typography>
       <br />
       <ConverterForm onTransferCreated={handleTransferCreated} />
+      <br />
       <TransferHistory
         transfers={transfers}
         onTransferDeleted={handleTransferDeleted}
