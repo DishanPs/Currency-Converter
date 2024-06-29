@@ -3,6 +3,7 @@ import { Button, List, ListItem, ListItemText } from "@mui/material";
 import axios from "axios";
 
 const TransferHistory = ({ transfers, onTransferDeleted }) => {
+
   //handle the deletion of a transfer record
   const handleDelete = async (id) => {
     try {

@@ -40,7 +40,7 @@ const ConverterForm = ({ onTransferCreated }) => {
         label="From Country"
         value={fromCountry}
         onChange={(e) => setFromCountry(e.target.value)}
-        fullWidth
+        sx={{ width: 500 }}
       >
         {countries.map((option) => (
           <MenuItem key={option.code} value={option.code}>
@@ -56,7 +56,7 @@ const ConverterForm = ({ onTransferCreated }) => {
         label="To Country"
         value={toCountry}
         onChange={(e) => setToCountry(e.target.value)}
-        fullWidth
+        sx={{ width: 500 }}
       >
         {countries.map((option) => (
           <MenuItem key={option.code} value={option.code}>
@@ -72,7 +72,7 @@ const ConverterForm = ({ onTransferCreated }) => {
         value={transferAmount}
         onChange={(e) => setTransferAmount(e.target.value)}
         type="number"
-        fullWidth
+        sx={{ width: 500 }}
       />
       <br />
       <br />
