@@ -14,8 +14,10 @@ const ConverterForm = ({ onTransferCreated }) => {
   const [toCountry, setToCountry] = useState("LKR");
   const [transferAmount, setTransferAmount] = useState("");
 
+  //Function to handle currency conversion
   const handleConvert = async () => {
     try {
+      //Post request to the backend API with form inputs
       const response = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/transfers`,
         {

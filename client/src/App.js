@@ -7,6 +7,7 @@ import { Container, Typography } from "@mui/material";
 const App = () => {
   const [transfers, setTransfers] = useState([]);
 
+  //fetch transfer records from the backend API
   const fetchTransfers = async () => {
     try {
       const response = await axios.get(
@@ -22,10 +23,12 @@ const App = () => {
     fetchTransfers();
   }, []);
 
+  //when a new transfer is created
   const handleTransferCreated = (newTransfer) => {
     setTransfers([...transfers, newTransfer]);
   };
 
+  //when a new transfer is deleted
   const handleTransferDeleted = (id) => {
     setTransfers(transfers.filter((transfer) => transfer._id !== id));
   };
